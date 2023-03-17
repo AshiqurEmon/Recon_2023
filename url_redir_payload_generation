@@ -24,4 +24,6 @@ echo '/%00/'$2'.com'|tee -a url_red.txt
 echo '/%07/'$2'.com'|tee -a url_red.txt
 echo '/%0a/'$2'.com'|tee -a url_red.txt
 echo '/%5C'$2'.com'|tee -a url_red.txt
+echo '@'$2'.com'|tee -a url_red.txt
+echo $1'@'$2'.com'|tee -a url_red.txt
 echo '//'$2'%E3%80%82com'|tee -a url_red.txt
