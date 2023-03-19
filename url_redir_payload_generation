@@ -20,7 +20,11 @@ echo 'https://'$1'.com.'$2'.com'|tee -a url_red.txt
 echo '/%0D/'$2'.com'|tee -a url_red.txt
 echo '/%2F/'$2'.com'|tee -a url_red.txt
 echo '/%09/'$2'.com'|tee -a url_red.txt
+echo 'https;'$2'.com'|tee -a url_red.txt
+echo 'https:'$2'.com'|tee -a url_red.txt
 echo '/%00/'$2'.com'|tee -a url_red.txt
+echo 'https://'$1'.com/@'$2'.com'|tee -a url_red.txt
+echo 'https://'$1'.com\@'$2'.com'|tee -a url_red.txt
 echo '/%07/'$2'.com'|tee -a url_red.txt
 echo '/%0a/'$2'.com'|tee -a url_red.txt
 echo '/%5C'$2'.com'|tee -a url_red.txt
