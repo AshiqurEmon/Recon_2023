@@ -1,5 +1,5 @@
 #!/bin/bash
-# ./url_redir_payload_generation targetwebsitename.com webhook.site/e607bc03-ac0e-47de-b86e-59f57d73bc19
+# ./ssrf_payload_generation targetwebsitename.com webhook.site/e607bc03-ac0e-47de-b86e-59f57d73bc19
 thiersites=$1
 mysite=$2
 
