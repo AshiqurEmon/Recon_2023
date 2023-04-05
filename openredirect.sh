@@ -8,4 +8,4 @@ cat $url |while read d;do cat $1|uro|grep '='| qsreplace $d|python3 -c "import s
 
 cat $url |while read d;do cat $1|uro|grep '='| qsreplace $d|anew>> urls.txt;done
 
-cat urls.txt | httpx -location | tee -a redirect_vul_url.txt
+cat urls.txt | httpx -location |grep -Fv '[]'| tee -a redirect_vul_url.txt
