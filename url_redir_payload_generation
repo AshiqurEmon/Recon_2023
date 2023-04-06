@@ -1,6 +1,6 @@
 
 #!/bin/bash
-# ./url_redir_payload_generation targetwebsitename .com webhook/sldjf234js
+# ./url_redir_payload_generation targetwebsitename .tld webhook/sldjf234js
 thiersites=$1
 tld=$2
 mysite=$3
