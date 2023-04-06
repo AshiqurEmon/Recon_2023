@@ -11,5 +11,5 @@ cat $url |while read d;do cat $1|uro|grep '='| qsreplace $d|anew>> ssti.txt;done
 
 cat ssti.txt | httpx -nc -t 250  -mr 888888 -silent | tee -a ssti_vul88888.txt
 cat ssti.txt | httpx -nc -t 250  -mr 64 -silent | tee -a ssti_vul64.txt
-cat ssti.txt |awk -F/ '{print $3}'|anew| httpx -nc -t 250  -mr 64 -silent -path $url | tee -a ssti_only_domain.com.txt
-cat ssti.txt |awk -F/ '{print $3}'|anew| httpx -nc -t 250  -mr 888888 -silent -path $url | tee -a ssti_only_domain.com.txt
+cat ssti.txt |awk -F/ '{print $3}'|anew| httpx -nc -x GET,POST -t 250  -mr 64 -silent -path $url | tee -a ssti_only_domain.com.txt
+cat ssti.txt |awk -F/ '{print $3}'|anew| httpx -nc -x GET,POST -t 250  -mr 888888 -silent -path $url | tee -a ssti_only_domain.com.txt
