@@ -1,0 +1,8 @@
+#!/bin/bash
+domain=$1
+payloads=$2
+ffuf -w $1:W1,$2:W2 -X GET  -H "User-Agent: W2" -H "Referer: W2" -H "Cookie: W2" -H "X-Forwarded-For: W2" -H "X-Forwarded-Host: W2" -H "X-Forwarded-scheme: W2" -H "X-Original-URL: W2" -u W1 -r 
+ffuf -w $1:W1,$2:W2 -X POST  -H "User-Agent: W2" -H "Referer: W2" -H "Cookie: W2" -H "X-Forwarded-For: W2" -H "X-Forwarded-Host: W2" -H "X-Forwarded-scheme: W2" -H "X-Original-URL: W2" -u W1 -r
+ffuf -w $1:W1,$2:W2 -X PATCH  -H "User-Agent: W2" -H "Referer: W2" -H "Cookie: W2" -H "X-Forwarded-For: W2" -H "X-Forwarded-Host: W2" -H "X-Forwarded-scheme: W2" -H "X-Original-URL: W2" -u W1 -r 
+ffuf -w $1:W1,$2:W2 -X PUT  -H "User-Agent: W2" -H "Referer: W2" -H "Cookie: W2" -H "X-Forwarded-For: W2" -H "X-Forwarded-Host: W2" -H "X-Forwarded-scheme: W2" -H "X-Original-URL: W2" -u W1 -r 
+ffuf -w $1:W1,$2:W2 -X DELETE  -H "User-Agent: W2" -H "Referer: W2" -H "Cookie: W2" -H "X-Forwarded-For: W2" -H "X-Forwarded-Host: W2" -H "X-Forwarded-scheme: W2" -H "X-Original-URL: W2" -u W1 -r 
