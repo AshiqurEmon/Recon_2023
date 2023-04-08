@@ -1,7 +1,6 @@
 #!/bin/bash
 #install uro qsreplace httpx anew
 domain=$1
-
 url=$2
 onlydomain=$3
 
