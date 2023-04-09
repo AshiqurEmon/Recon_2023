@@ -4,6 +4,7 @@ thiersites=$1
 mysite=$2
 
 echo '\/'$2|tee -a ssrf_redir.txt
+echo 'http://'$2|tee -a ssrf_redir.txt
 echo '\/\/'$2|tee -a ssrf_redir.txt
 echo '\\'$2|tee -a ssrf_redir.txt
 echo '//'$2|tee -a ssrf_redir.txt
