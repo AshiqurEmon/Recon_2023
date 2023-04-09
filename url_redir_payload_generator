@@ -6,6 +6,7 @@ tld=$2
 mysite=$3
 
 echo '\/'$3|tee -a url_red.txt
+echo 'http://'$3|tee -a url_red.txt
 echo '\/\/'$3|tee -a url_red.txt
 echo '\\'$3|tee -a url_red.txt
 echo '//'$3|tee -a url_red.txt
