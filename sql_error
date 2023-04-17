@@ -1,1 +1,36 @@
-ffuf -u https://error/login.php -d "username=FUZZ&password=" -w sqli.txt -s -mr "error" -X POST -H "Content-Type: application/x-www-form-urlencoded" -s
+#!/bin/bash
+url=$1
+errorsqli=$2
+for i in $(cat $1);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "error" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlierror.txt
+for i in $(cat $1);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "error" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqlierror.txt
+
+for i in $(cat $1);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "column" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlicolumn.txt
+for i in $(cat $1);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "column" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqlicolumn.txt
+
+for i in $(cat $1);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "column" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlierror.txt
+for i in $(cat $1);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "column" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqlierror.txt
+
