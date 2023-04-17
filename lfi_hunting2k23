@@ -1,13 +1,25 @@
 #!/bin/bash
 url=$1
-path=$2
+linux_payloads=$2
+windows_payloads=$3
 for i in $(cat $1);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "root:x" -t 60  ;done| tee -a ffuf_op.txt
+">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "root:x" -t 60  ;done| tee -a ffuf_op_linux.txt
 for i in $(cat $1);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "root:x" -X POST -t 60  ;done| tee -a ffuf_op_post_method.txt
+">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "root:x" -X POST -t 60  ;done| tee -a ffuf_op_post_method_linux.txt
+for i in $(cat $1);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>ffuf_op.txt| ffuf -u $i/FUZZ -w $3 -mr "windows" -t 60  ;done| tee -a ffuf_op_windows.txt
+for i in $(cat $1);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>ffuf_op.txt| ffuf -u $i/FUZZ -w $3 -mr "windows" -X POST -t 60  ;done| tee -a ffuf_op_post_method_windows.txt
+
