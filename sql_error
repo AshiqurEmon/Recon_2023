@@ -37,34 +37,35 @@ URL: $i
 
 for i in $(cat $3);do echo "
 ==========================================================
-URL: $3
+URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $3 -w $2 -mr "error" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlierrorheader.txt
+">>ffuf_op.txt| ffuf -u $i -w $2 -mr "error" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlierrorheader.txt
 for i in $(cat $3);do echo "
 ==========================================================
-URL: $3
+URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $3 -w $2 -mr "error" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqlierrorheader.txt
+">>ffuf_op.txt| ffuf -u $i -w $2 -mr "error" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqlierrorheader.txt
 
 for i in $(cat $3);do echo "
 ==========================================================
-URL: $3
+URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $3 -w $2 -mr "column" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlicolumnheader.txt
-for i in $(cat $1);do echo "
+">>ffuf_op.txt| ffuf -u $i -w $2 -mr "column" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlicolumnheader.txt
+for i in $(cat $3);do echo "
 ==========================================================
-URL: $3
+URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $3 -w $2 -mr "column" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqlicolumnheader.txt
+">>ffuf_op.txt| ffuf -u $i -w $2 -mr "column" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqlicolumnheader.txt
 
 for i in $(cat $3);do echo "
 ==========================================================
-URL: $3
+URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $3 -w $2 -mr "table" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlitableheader.txt
+">>ffuf_op.txt| ffuf -u $i -w $2 -mr "table" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlitableheader.txt
 for i in $(cat $3);do echo "
 ==========================================================
-URL: $3
+URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $3 -w $2 -mr "table" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqtableheader.txt
+">>ffuf_op.txt| ffuf -u $i -w $2 -mr "table" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqtableheader.txt
+
 
