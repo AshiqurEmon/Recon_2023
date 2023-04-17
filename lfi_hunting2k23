@@ -6,3 +6,8 @@ for i in $(cat $1);do echo "
 URL: $i
 ==========================================================
 ">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "root:x" -t 60  ;done| tee -a ffuf_op.txt
+for i in $(cat $1);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "root:x" -X POST -t 60  ;done| tee -a ffuf_op_post_method.txt
