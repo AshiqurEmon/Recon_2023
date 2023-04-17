@@ -2,7 +2,7 @@
 url=$1
 errorsqli=$2
 httpx=$3
-cat fuzz.txt|qsreplace "FUZZ"|tee -a fuzz.txt
+cat $1|qsreplace "FUZZ"|tee -a fuzz.txt
 for i in $(cat fuzz.txt);do echo "
 ==========================================================
 URL: $i
