@@ -1,0 +1,1 @@
+ffuf -u https://domain/login.php -d "username=FUZZ&password=" -w sqli.txt -s -ft "<5000" -X POST -H "Content-Type: application/x-www-form-urlencoded"
