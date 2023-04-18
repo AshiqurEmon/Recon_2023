@@ -24,3 +24,4 @@ for i in $(cat $3);do echo "
 URL: $i
 ==========================================================
 ">>4_ffuf_op_post_method_sqlierrorheader.txt| ffuf -u $i -w $2 -ft "<5000" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a 4_ffuf_op_post_method_sqlierrorheader.txt
+rm fuzz.txt
