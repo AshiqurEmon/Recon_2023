@@ -7,34 +7,34 @@ for i in $(cat fuzz.txt);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "error" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlierror.txt
+">>ffuf_op.txt| ffuf -u $i -w $2 -mr "error" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlierror.txt
 for i in $(cat fuzz.txt);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "error" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqlierror.txt
+">>ffuf_op.txt| ffuf -u $i -w $2 -mr "error" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqlierror.txt
 
 for i in $(cat fuzz.txt);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "column" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlicolumn.txt
+">>ffuf_op.txt| ffuf -u $i -w $2 -mr "column" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlicolumn.txt
 for i in $(cat fuzz.txt);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "column" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqlicolumn.txt
+">>ffuf_op.txt| ffuf -u $i -w $2 -mr "column" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqlicolumn.txt
 
 for i in $(cat fuzz.txt);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "table" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlitable.txt
+">>ffuf_op.txt| ffuf -u $i -w $2 -mr "table" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_sqlitable.txt
 for i in $(cat fuzz.txt);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "table" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqtable.txt
+">>ffuf_op.txt| ffuf -u $i -w $2 -mr "table" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a ffuf_op_post_method_sqtable.txt
 
 for i in $(cat $3);do echo "
 ==========================================================
