@@ -8,41 +8,41 @@ for i in $(cat fuzz.txt);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i -w $2 -mr "root:x" -t 60 -s  ;done| tee -a ffuf_op_linux.txt
+">>1_ffuf_op_linux.txt| ffuf -u $i -w $2 -mr "root:x" -t 60 -s  ;done| tee -a 1_ffuf_op_linux.txt
 for i in $(cat fuzz.txt);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i -w $2 -mr "root:x" -X POST -t 60 -s  ;done| tee -a ffuf_op_post_method_linux.txt
+">>2_ffuf_op_post_method_linux.txt| ffuf -u $i -w $2 -mr "root:x" -X POST -t 60 -s  ;done| tee -a 2_ffuf_op_post_method_linux.txt
 for i in $(cat fuzz.txt);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i -w $3 -mr "WINDOWS" -t 60 -s  ;done| tee -a ffuf_op_windows.txt
+">>3_ffuf_op_windows.txt| ffuf -u $i -w $3 -mr "WINDOWS" -t 60 -s  ;done| tee -a 3_ffuf_op_windows.txt
 for i in $(cat fuzz.txt);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i -w $3 -mr "WINDOWS" -X POST -t 60 -s ;done| tee -a ffuf_op_post_method_windows.txt
+">>4_ffuf_op_post_method_windows.txt| ffuf -u $i -w $3 -mr "WINDOWS" -X POST -t 60 -s ;done| tee -a 4_ffuf_op_post_method_windows.txt
 
 for i in $(cat $4);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "root:x" -t 60 -s  ;done| tee -a ffuf_op_linux_http.txt
+">>5_ffuf_op_linux_http.txt| ffuf -u $i/FUZZ -w $2 -mr "root:x" -t 60 -s  ;done| tee -a 5_ffuf_op_linux_http.txt
 for i in $(cat $4);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i/FUZZ -w $2 -mr "root:x" -X POST -t 60 -s  ;done| tee -a ffuf_op_post_method_linux_http.txt
+">>6_ffuf_op_post_method_linux_http.txt| ffuf -u $i/FUZZ -w $2 -mr "root:x" -X POST -t 60 -s  ;done| tee -a 6_ffuf_op_post_method_linux_http.txt
 for i in $(cat $4);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i/FUZZ -w $3 -mr "WINDOWS" -t 60 -s  ;done| tee -a ffuf_op_windows_http.txt
+">>7_ffuf_op_windows_http.txt| ffuf -u $i/FUZZ -w $3 -mr "WINDOWS" -t 60 -s  ;done| tee -a 7_ffuf_op_windows_http.txt
 for i in $(cat $4);do echo "
 ==========================================================
 URL: $i
 ==========================================================
-">>ffuf_op.txt| ffuf -u $i/FUZZ -w $3 -mr "WINDOWS" -X POST -t 60 -s ;done| tee -a ffuf_op_post_method_windows_http.txt
+">>8_ffuf_op_post_method_windows_http.txt| ffuf -u $i/FUZZ -w $3 -mr "WINDOWS" -X POST -t 60 -s ;done| tee -a 8_ffuf_op_post_method_windows_http.txt
 
