@@ -1,0 +1,26 @@
+#!/bin/bash
+url=$1
+errorsqli=$2
+httpx=$3
+cat $1|qsreplace "FUZZ"|tee -a fuzz.txt
+for i in $(cat fuzz.txt);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>1_ffuf_op_sqliblind.txt| ffuf -u $i -w $2 -ft "<5000" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a 1_ffuf_op_sqliblind.txt
+for i in $(cat fuzz.txt);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>2_ffuf_op_post_method_sqliblind.txt| ffuf -u $i -w $2 -ft "<5000" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a 2_ffuf_op_post_method_sqliblind.txt
+
+for i in $(cat $3);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>3_ffuf_op_sqlierrorheader.txt| ffuf -u $i -w $2 -ft "<5000" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a 3_ffuf_op_sqlierrorheader.txt
+for i in $(cat $3);do echo "
+==========================================================
+URL: $i
+==========================================================
+">>4_ffuf_op_post_method_sqlierrorheader.txt| ffuf -u $i -w $2 -ft "<5000" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ" -H "User-Agent: FUZZ" -X POST -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a 4_ffuf_op_post_method_sqlierrorheader.txt
