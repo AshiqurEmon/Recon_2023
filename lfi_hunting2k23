@@ -45,4 +45,5 @@ for i in $(cat $4);do echo "
 URL: $i
 ==========================================================
 ">>8_ffuf_op_post_method_windows_http.txt| ffuf -u $i/FUZZ -w $3 -mr "WINDOWS" -X POST -t 60 -s ;done| tee -a 8_ffuf_op_post_method_windows_http.txt
+rm fuzz.txt
 
