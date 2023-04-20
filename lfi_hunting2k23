@@ -3,7 +3,7 @@ url=$1
 linux_payloads=$2
 windows_payloads=$3
 httpxx=$4
-cat $1|qsreplace "FUZZ" |tee -a fuzz.txt
+cat $1|qsreplace "FUZZ" |anew|tee -a fuzz.txt
 for i in $(cat fuzz.txt);do echo "
 ==========================================================
 URL: $i
