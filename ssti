@@ -11,7 +11,7 @@ cat $url |while read d;do cat $1|uro|grep '='| qsreplace $d|python3 -c "import s
 
 cat $url |while read d;do cat $1|uro|grep '='| qsreplace $d|anew>> ssti.txt;done
 
-cat ssti.txt | httpx -mr 888888 -silent | tee -a ssti_vul88888.txt
-cat ssti.txt | httpx -mr 64 -silent | tee -a ssti_vul64.txt
+cat ssti.txt | httpx -x GET,POST -mr 888888 -silent | tee -a ssti_vul88888.txt
+cat ssti.txt | httpx -x GET,POST -mr 64 -silent | tee -a ssti_vul64.txt
 cat $3 | httpx -x GET,POST -mr '/64' -silent -path $4 | tee -a ssti_only_domain.com_64.txt
 cat $3 | httpx -x GET,POST -mr '/888888' -silent -path $4 | tee -a ssti_only_domain.com_88888.txt
