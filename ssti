@@ -7,9 +7,9 @@ url=$2
 onlyurl=$3
 path=$4
 
-cat $url |while read d;do cat $1|uro|grep '='| qsreplace $d|python3 -c "import sys; from urllib.parse import unquote; print(unquote(sys.stdin.read()));"|grep $d|anew>> ssti.txt;done
+cat $url |while read d;do cat $1|uro|grep '='| qsreplace $d|python3 -c "import sys; from urllib.parse import unquote; print(unquote(sys.stdin.read()));"|grep =|anew>> ssti.txt;done
 
-cat $url |while read d;do cat $1|uro|grep '='| qsreplace $d|anew>> ssti.txt;done
+cat $url |while read d;do cat $1|uro|grep '='| qsreplace $d|grep =|anew>> ssti.txt;done
 
 cat ssti.txt | httpx -x GET,POST -mr 888888 -silent | tee -a ssti_vul88888.txt
 cat ssti.txt | httpx -x GET,POST -mr 2470 -silent | tee -a ssti_vul6400.txt
