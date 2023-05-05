@@ -10,6 +10,7 @@ echo 'http://'$3|tee -a url_red.txt
 echo '\/\/'$3|tee -a url_red.txt
 echo '\\'$3|tee -a url_red.txt
 echo '//'$3|tee -a url_red.txt
+echo '//'$3'/%2e%2e'|tee -a url_red.txt
 echo '//ZXZpbC5jb20K'|tee -a url_red.txt
 echo '//'$1$2'@'$3|tee -a url_red.txt
 echo '/\/'$3|tee -a url_red.txt
