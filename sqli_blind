@@ -7,6 +7,11 @@ for i in $(cat fuzz.txt);do echo "
 ==========================================================
 URL: $i
 ==========================================================
+">>2_ffuf_op_post_method_sqliblind.txt| ffuf -u $i -w $2 -ft "<5000" -X GET -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" ;done| tee -a 1_ffuf_op_post_method_sqliblind.txt
+for i in $(cat fuzz.txt);do echo "
+==========================================================
+URL: $i
+==========================================================
 ">>5_ffuf_op_sqliblind.txt| ffuf -u $i -w $2 -ft "<5000" -t 60 -s -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: FUZZ" -H "Accept-Charset: FUZZ" -H "Accept-Encoding: FUZZ" -H "Accept-Language: FUZZ" -H "Authorization: FUZZ" -H "Cookie: FUZZ" -H "Host: FUZZ" -H "If-Modified-Since: FUZZ" -H "Referer: FUZZ"  -H "User-Agent: FUZZ" -H "X-Rewrite-URL: FUZZ" -H "X-Wap-Profile: FUZZ" -H "X-Forwarded-Host: FUZZ" -H "X-Client-IP: FUZZ" -H "X-Custom-IP-Authorization: FUZZ" -H "True-Client-IP: FUZZ" -H "From: FUZZ" -H "Forwarded: FUZZ" -H "Contact: FUZZ" -H "Connection: FUZZ" -H "Client-IP: FUZZ" -H "X-Rewrite-URL: FUZZ" -H "X-Forwarded-Server: FUZZ" -H "X-Host: FUZZ" -H "X-HTTP-Host-Override: FUZZ" -H "X-Original-URL: FUZZ" -H "X-Originating-IP: FUZZ" -H "X-Rewrite-URL: FUZZ" -H "X-Real-IP: FUZZ" -H "X-Remote-IP: FUZZ";done| tee -a 5_ffuf_op_sqliblind.txt
 for i in $(cat fuzz.txt);do echo "
 ==========================================================
