@@ -1,5 +1,6 @@
 #!/bin/bash
 #install uro qsreplace httpx anew
+# openredirect.sh gau.txt openredirect_payload.txt onlydomain.txt
 domain=$1
 url=$2
 onlydomain=$3
