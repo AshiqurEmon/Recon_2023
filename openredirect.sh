@@ -9,7 +9,7 @@ cat $url |while read d;do cat $1|anew|grep '='| qsreplace $d|python3 -c "import 
 
 cat $url |while read d;do cat $1|anew|grep '='| qsreplace $d|anew>> urls.txt;done
 
-cat urls.txt | httpx -fr -location -x all
+cat urls.txt | httpx -fr -location
 cat $3 |while read d;do echo $d'/'|tee -a url_slashed.txt;done
-cat url_slashed.txt| httpx -fr -mr 'webhook' -silent -x all -path $2 
+cat url_slashed.txt| httpx -fr -mr 'webhook' -silent -path $2 
 rm url_slashed.txt
